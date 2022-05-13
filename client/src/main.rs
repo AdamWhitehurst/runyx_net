@@ -75,7 +75,7 @@ fn client_sync_players(
 }
 
 fn new_renet_client() -> RenetClient {
-    let server_addr = "127.0.0.1:5000".parse().unwrap();
+    let server_addr = "127.0.0.1:9000".parse().unwrap();
     let socket = UdpSocket::bind("127.0.0.1:0").unwrap();
     let connection_config = RenetConnectionConfig::default();
     let current_time = SystemTime::now()
