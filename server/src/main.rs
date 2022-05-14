@@ -76,7 +76,7 @@ fn server_update_system(
                     let message =
                         bincode::serialize(&ServerMessages::PlayerConnected { id: player_id })
                             .unwrap();
-                    server.send_message(*id, 0, message).unwrap();
+                    server.send_message(*id, 0, message);
                 }
 
                 lobby.players.insert(*id, player_entity);

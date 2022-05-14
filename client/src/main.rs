@@ -110,5 +110,5 @@ fn player_input(keyboard_input: Res<Input<KeyCode>>, mut player_input: ResMut<Pl
 fn client_send_input(player_input: Res<PlayerInput>, mut client: ResMut<RenetClient>) {
     let input_message = bincode::serialize(&*player_input).unwrap();
 
-    client.send_message(0, input_message).unwrap();
+    client.send_message(0, input_message);
 }

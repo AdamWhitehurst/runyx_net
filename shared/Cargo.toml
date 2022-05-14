@@ -5,6 +5,5 @@ edition = "2021"
 
 [dependencies]
 bevy = { version = "0.7.0" }
-# bevy_renet = "0.0.2" // SOON
-bevy_renet = { git = "https://github.com/lucaspoffo/renet", rev = "0318e5e6441960f700ef7685105815a9dd889b63" }
+bevy_renet = "0.0.2"
 serde = { version = "1.0.117", features = [ "derive" ] } 

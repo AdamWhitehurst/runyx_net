@@ -600,8 +600,9 @@ dependencies = [
 
 [[package]]
 name = "bevy_renet"
-version = "0.0.1"
-source = "git+https://github.com/lucaspoffo/renet?rev=0318e5e6441960f700ef7685105815a9dd889b63#0318e5e6441960f700ef7685105815a9dd889b63"
+version = "0.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1b746d4d119587c1514968cdd5b6a080bd8f88fe5f5edfd46e5f547b6877cea"
 dependencies = [
  "bevy",
  "renet",
@@ -872,6 +873,9 @@ name = "bytes"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c4872d67bab6358e59559027aa3b9157c53d9358c51423c17554809a8858e0f8"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "cache-padded"
@@ -2534,10 +2538,12 @@ dependencies = [
 
 [[package]]
 name = "rechannel"
-version = "0.0.2"
-source = "git+https://github.com/lucaspoffo/renet?rev=0318e5e6441960f700ef7685105815a9dd889b63#0318e5e6441960f700ef7685105815a9dd889b63"
+version = "0.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d310dc500bcad9483583978aebdf82b442783cb59a888e705204ba20515264e8"
 dependencies = [
  "bincode",
+ "bytes",
  "log",
  "serde",
 ]
@@ -2591,8 +2597,9 @@ checksum = "f1382d1f0a252c4bf97dc20d979a2fdd05b024acd7c2ed0f7595d7817666a157"
 
 [[package]]
 name = "renet"
-version = "0.0.6"
-source = "git+https://github.com/lucaspoffo/renet?rev=0318e5e6441960f700ef7685105815a9dd889b63#0318e5e6441960f700ef7685105815a9dd889b63"
+version = "0.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6a3b85ebe19ca26c2dae0e809b8619a8c42a9ca1de20a2e351cb380118f8579d"
 dependencies = [
  "log",
  "rechannel",
@@ -2601,8 +2608,9 @@ dependencies = [
 
 [[package]]
 name = "renetcode"
-version = "0.0.2"
-source = "git+https://github.com/lucaspoffo/renet?rev=0318e5e6441960f700ef7685105815a9dd889b63#0318e5e6441960f700ef7685105815a9dd889b63"
+version = "0.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7153774a576fdf8de80a63a643832491f4f103f0839ecfdeac4b653c9c5b0cbe"
 dependencies = [
  "aead",
  "chacha20poly1305",
