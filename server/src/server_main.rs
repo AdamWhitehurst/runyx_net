@@ -1,12 +1,12 @@
 use bevy::prelude::*;
+use bevy_inspector_egui::WorldInspectorPlugin;
 use bevy_renet::{
     renet::{
-        ConnectToken, RenetClient, RenetConnectionConfig, RenetError, RenetServer, ServerConfig,
-        ServerEvent, NETCODE_KEY_BYTES,
+        RenetConnectionConfig, RenetError, RenetServer, ServerConfig, ServerEvent,
+        NETCODE_KEY_BYTES,
     },
-    run_if_client_conected, RenetClientPlugin, RenetServerPlugin,
+    RenetServerPlugin,
 };
-
 use std::time::SystemTime;
 use std::{collections::HashMap, net::UdpSocket};
 
@@ -22,6 +22,7 @@ fn main() {
 
     // Server-Only
     app.add_plugin(RenetServerPlugin);
+    app.add_plugin(WorldInspectorPlugin::new());
     app.insert_resource(new_renet_server());
     app.add_system(server_update_system);
     app.add_system(server_sync_players);
