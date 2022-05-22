@@ -2,11 +2,6 @@
 name = "shared"
 version = "0.1.0"
 edition = "2021"
-[features]
-wbindgen = [ "naia-socket-shared/wbindgen", "js-sys" ]
-mquad = [ "naia-socket-shared/mquad" ]
-bevy_support = [ "bevy_ecs" ]
-zstd_support = [ "zstd" ]
 
 [dependencies]
 bevy = { version = "0.7.0" }
@@ -15,6 +10,3 @@ naia-shared = "0.10.0"
 log = { version = "0.4" }
 naia-derive = { version = "0.10" }
 naia-serde = { version = "0.10" }
-cfg-if = { version = "1.0" }
-js-sys = { version = "0.3", optional = true }
-zstd = { version = "0.11.1", optional = true }

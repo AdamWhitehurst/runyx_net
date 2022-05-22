@@ -1,15 +1,13 @@
-use bevy_app::{App, ScheduleRunnerPlugin};
-use bevy_core::CorePlugin;
-use bevy_log::{info, LogPlugin};
-
+use bevy::app::ScheduleRunnerPlugin;
+use bevy::core::CorePlugin;
+use bevy::log::LogPlugin;
+use bevy::prelude::*;
 use naia_bevy_server::{Plugin as ServerPlugin, ServerConfig, Stage};
-
 use shared::{protocol::Protocol, shared_config, Channels};
+use systems::{events, init, tick};
 
 mod resources;
 mod systems;
-
-use systems::{events, init, tick};
 
 fn main() {
     info!("Naia Bevy Server starting up");

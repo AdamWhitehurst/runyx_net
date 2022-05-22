@@ -1,10 +1,7 @@
-use std::default::Default;
-
 use bevy::ecs::entity::Entity;
-
 use naia_bevy_client::CommandHistory;
-
-use naia_bevy_demo_shared::protocol::KeyCommand;
+use shared::protocol::KeyCommand;
+use std::default::Default;
 
 pub struct OwnedEntity {
     pub confirmed: Entity,

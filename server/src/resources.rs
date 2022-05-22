@@ -1,10 +1,7 @@
-use std::collections::HashMap;
-
-use bevy_ecs::entity::Entity;
-
+use bevy::ecs::entity::Entity;
 use naia_bevy_server::{RoomKey, UserKey};
-
-use naia_bevy_demo_shared::protocol::KeyCommand;
+use shared::protocol::KeyCommand;
+use std::collections::HashMap;
 
 pub struct Global {
     pub main_room_key: RoomKey,

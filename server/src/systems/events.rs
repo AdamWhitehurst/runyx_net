@@ -1,5 +1,5 @@
-use bevy_ecs::{event::EventReader, system::ResMut};
-use bevy_log::info;
+use bevy::ecs::{event::EventReader, system::ResMut};
+use bevy::log::info;
 
 use naia_bevy_server::{
     events::{AuthorizationEvent, ConnectionEvent, DisconnectionEvent, MessageEvent},
@@ -7,7 +7,7 @@ use naia_bevy_server::{
     Server,
 };
 
-use naia_bevy_demo_shared::{
+use shared::{
     protocol::{Color, ColorValue, EntityAssignment, Position, Protocol},
     Channels,
 };

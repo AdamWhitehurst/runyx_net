@@ -1,16 +1,12 @@
+use crate::resources::Global;
+use bevy::ecs::system::Commands;
+use bevy::log::info;
+use naia_bevy_server::{Server, ServerAddrs};
+use shared::{protocol::Protocol, Channels};
 use std::collections::HashMap;
 
-use bevy_ecs::system::Commands;
-use bevy_log::info;
-
-use naia_bevy_server::{Server, ServerAddrs};
-
-use naia_bevy_demo_shared::{protocol::Protocol, Channels};
-
-use crate::resources::Global;
-
 pub fn init(mut commands: Commands, mut server: Server<Protocol, Channels>) {
-    info!("Naia Bevy Server Demo is running");
+    info!("Naia Bevy Server is running");
 
     // Naia Server initialization
     let server_addresses = ServerAddrs::new(

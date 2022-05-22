@@ -1,8 +1,8 @@
-use bevy_ecs::system::{Query, ResMut};
+use bevy::ecs::system::{Query, ResMut};
 
 use naia_bevy_server::Server;
 
-use naia_bevy_demo_shared::{
+use shared::{
     behavior as shared_behavior,
     protocol::{Position, Protocol},
     Channels,

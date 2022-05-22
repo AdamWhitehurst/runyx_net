@@ -2,7 +2,7 @@ use bevy::{ecs::system::Commands, log::info, render::camera::OrthographicCameraB
 
 use naia_bevy_client::Client;
 
-use naia_bevy_demo_shared::{
+use shared::{
     protocol::{Auth, Protocol},
     Channels,
 };
@@ -10,7 +10,7 @@ use naia_bevy_demo_shared::{
 use crate::resources::Global;
 
 pub fn init(mut commands: Commands, mut client: Client<Protocol, Channels>) {
-    info!("Naia Bevy Client Demo started");
+    info!("Naia Bevy Client started");
 
     client.auth(Auth::new("charlie", "12345"));
     client.connect("http://127.0.0.1:14191");
