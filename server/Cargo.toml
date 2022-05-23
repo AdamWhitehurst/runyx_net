@@ -8,11 +8,11 @@ use-udp = [ "naia-bevy-server/use-udp" ]
 use-webrtc = [ "naia-bevy-server/use-webrtc" ]
 
 [dependencies]
-# bevy = { version = "0.7.0", default-features = false }
 shared = { path = "../shared" }
 naia-bevy-server = "0.10.1"
 bevy-inspector-egui = "0.11.0"
-bevy = "0.7"
+bevy = { version = "0.7.0", default-features = false }
+# bevy = "0.7"
 
 [[bin]]
 name = "server"

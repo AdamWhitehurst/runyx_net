@@ -1,15 +1,15 @@
-use bevy::prelude::*;
-use shared::*;
+#[macro_use]
+extern crate cfg_if;
 
-fn main() {
-    // General
-    let mut app = App::new();
-    app.add_plugins(DefaultPlugins);
+cfg_if! {
+    if #[cfg(not(target_arch = "wasm32"))] {
 
-    // Client-Only
+        mod resources;
+        mod systems;
+        mod app;
 
-    // Shared
-    app.add_startup_system(setup);
-
-    app.run();
+        fn main() {
+            app::run();
+        }
+    }
 }

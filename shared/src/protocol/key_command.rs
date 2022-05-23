@@ -1,4 +1,4 @@
-use bevy::prelude::Component;
+use bevy::ecs::component::Component;
 
 use naia_shared::{EntityProperty, Property, Replicate};
 
