@@ -59,6 +59,8 @@ pub fn insert_component_event(
                         ColorValue::Red => BevyColor::RED,
                         ColorValue::Blue => BevyColor::BLUE,
                         ColorValue::Yellow => BevyColor::YELLOW,
+                        ColorValue::Purple => BevyColor::PURPLE,
+                        ColorValue::Orange => BevyColor::ORANGE
                     }
                 };
 

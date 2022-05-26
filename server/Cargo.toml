@@ -9,7 +9,7 @@ use-webrtc = [ "naia-bevy-server/use-webrtc" ]
 
 [dependencies]
 shared = { path = "../shared" }
-naia-bevy-server = "0.10.1"
+naia-bevy-server ={ git = "https://github.com/naia-lib/naia/", branch = "main"}
 bevy-inspector-egui = "0.11.0"
 bevy = { version = "0.7.0", default-features = false }
 # bevy = "0.7"

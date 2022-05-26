@@ -20,7 +20,7 @@ default = [
 ]
 
 [dependencies]
-naia-bevy-client = "0.10.1"
+naia-bevy-client ={ git = "https://github.com/naia-lib/naia/", branch = "main"}
 shared = { path = "../shared" }
 winit = { version = "0.26" }
 rand = { version = "0.8" }
