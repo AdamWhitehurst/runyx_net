@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bevy = { version = "0.7.0" }
-bevy_renet = "0.0.2"
-serde = { version = "1.0.117", features = [ "derive" ] } 
+bevy = { version = "0.7.0", default-features=false }
+# naia-shared = "0.10.1"
+naia-shared = { git = "https://github.com/naia-lib/naia/", branch = "main"}
+cfg-if = { version = "1.0" }
+log = { version = "0.4" }
