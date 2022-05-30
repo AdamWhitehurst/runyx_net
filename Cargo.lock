@@ -975,10 +975,13 @@ name = "client"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "bevy_egui",
  "cfg-if 1.0.0",
  "getrandom",
+ "lazy_static",
  "naia-bevy-client",
  "rand",
+ "regex",
  "shared",
  "wasm-bindgen",
  "winit",

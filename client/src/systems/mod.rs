@@ -4,8 +4,10 @@ mod init;
 mod input;
 mod sync;
 mod tick;
+mod ui;
 
-pub use init::init;
-pub use input::input;
-pub use sync::sync;
-pub use tick::tick;
+pub use init::*;
+pub use input::*;
+pub use sync::*;
+pub use tick::*;
+pub use ui::*;

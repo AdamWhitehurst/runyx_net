@@ -15,7 +15,7 @@ dependencies = ["install-wasm-pack", "install-target-wasm32-unknown-unknown", ]
 
 [tasks.serve]
 command = "basic-http-server"
-args = ["-x"]
+args = ["-x", "-a", "10.0.0.216:4000"]
 dependencies = ["build", "install-basic-http-server"]
 
 [tasks.test]

@@ -1,5 +1,4 @@
-use bevy::{ecs::system::Commands, log::info, render::camera::OrthographicCameraBundle};
-
+use bevy::prelude::*;
 use naia_bevy_client::Client;
 
 use shared::{
@@ -7,17 +6,31 @@ use shared::{
     Channels,
 };
 
-use crate::resources::Global;
+use crate::{
+    app::{AppState, ConnectionAddress},
+    resources::Global,
+};
 
-pub fn init(mut commands: Commands, mut client: Client<Protocol, Channels>) {
-    info!("Naia Bevy Client started");
+pub fn init_network_client(
+    mut commands: Commands,
+    mut client: Client<Protocol, Channels>,
+    mut app_state: ResMut<State<AppState>>,
+    conn_addr: Res<ConnectionAddress>,
+) {
+    if let Some(addr) = &*conn_addr {
+        info!("Naia Bevy Client starting");
 
-    client.auth(Auth::new("charlie", "12345"));
-    client.connect("http://127.0.0.1:14191");
+        client.auth(Auth::new("charlie", "12345"));
+        client.connect(format!("http://{}", addr).as_str());
 
-    // Setup Camera
-    commands.spawn_bundle(OrthographicCameraBundle::new_2d());
+        // Setup Camera
+        commands.spawn_bundle(OrthographicCameraBundle::new_2d());
 
-    // Setup Colors
-    commands.init_resource::<Global>();
+        // Setup Colors
+        app_state
+            .set(AppState::InGame)
+            .expect("Set AppState::InGame failed")
+    } else {
+        panic!("No connection addr when initting network client");
+    }
 }
