@@ -21,7 +21,7 @@ pub fn init_network_client(
         info!("Naia Bevy Client starting");
 
         client.auth(Auth::new("charlie", "12345"));
-        client.connect(format!("http://{}", addr).as_str());
+        client.connect(format!("http://{}:3478", addr).as_str());
 
         // Setup Camera
         commands.spawn_bundle(OrthographicCameraBundle::new_2d());

@@ -10,15 +10,15 @@ pub fn init(mut commands: Commands, mut server: Server<Protocol, Channels>) {
 
     // Naia Server initialization
     let server_addresses = ServerAddrs::new(
-        "10.0.0.216:14191"
+        "10.0.0.216:3478"
             .parse()
             .expect("could not parse Signaling address/port"),
         // IP Address to listen on for UDP WebRTC data channels
-        "10.0.0.216:14192"
+        "10.0.0.216:3478"
             .parse()
             .expect("could not parse WebRTC data address/port"),
         // The public WebRTC IP address to advertise
-        "http://10.0.0.216:14192",
+        "http://10.0.0.216:3478",
     );
 
     server.listen(&server_addresses);

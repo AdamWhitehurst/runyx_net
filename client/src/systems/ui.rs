@@ -9,7 +9,7 @@ use regex::Regex;
 use crate::app::{AppState, ConnectionAddress};
 
 lazy_static! {
-        static ref IP_PORT: Regex = Regex::new(r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])?:?[0-9]+$").unwrap();
+        static ref IP_PORT: Regex = Regex::new(r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$").unwrap();
 }
 
 #[derive(Default)]
@@ -24,22 +24,11 @@ pub fn menu_ui(
     mut conn_addr: ResMut<ConnectionAddress>,
     mut app_state: ResMut<State<AppState>>,
 ) {
-    let margin = egui::style::Margin {
-        top: 100.0,
-        bottom: 100.0,
-        left: 100.0,
-        right: 100.0,
-    };
-
-    egui::CentralPanel::default()
-        .frame(egui::Frame {
-            outer_margin: margin,
-            fill: egui::Color32::DARK_GRAY,
-            ..Default::default()
-        })
+    egui::Window::new("Runyx")
+        .fixed_size((150.0, 150.0))
+        .collapsible(false)
+        .anchor(egui::Align2::CENTER_CENTER, (0., 0.))
         .show(egui_context.ctx_mut(), |ui| {
-            ui.heading("Menu");
-            ui.add_space(100.0);
             ui.vertical_centered_justified(|ui| {
                 ui.horizontal_top(|ui| {
                     ui.label("IP:");
