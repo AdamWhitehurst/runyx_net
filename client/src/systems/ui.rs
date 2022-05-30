@@ -1,8 +1,5 @@
 use bevy::prelude::*;
-use bevy_egui::{
-    egui::{self, menu, RichText},
-    EguiContext,
-};
+use bevy_egui::{egui, EguiContext};
 use lazy_static::lazy_static;
 use regex::Regex;
 

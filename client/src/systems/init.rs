@@ -6,10 +6,7 @@ use shared::{
     Channels,
 };
 
-use crate::{
-    app::{AppState, ConnectionAddress},
-    resources::Global,
-};
+use crate::app::{AppState, ConnectionAddress};
 
 pub fn init_network_client(
     mut commands: Commands,
